@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployeeInsertComponent } from './pages/employee-insert/employee-insert.component';
+import { AddEmployeeComponent } from './pages/add-employee/add-employee.component';
+// Import other components as needed
 
 const routes: Routes = [
-  { path: 'insert-employee', component: EmployeeInsertComponent },
-  // ... other routes
-  { path: '', redirectTo: '/insert-employee', pathMatch: 'full' },
-  { path: '**', redirectTo: '/insert-employee' }
+  { path: 'add-employee', component: AddEmployeeComponent },
+  // Define other routes here
+  { path: '', redirectTo: '/add-employee', pathMatch: 'full' },
+  { path: '**', redirectTo: '/add-employee' }
 ];
 
 @NgModule({

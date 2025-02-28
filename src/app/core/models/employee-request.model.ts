@@ -1,6 +1,6 @@
 export interface EmployeeRequest {
-  id: number;
-  name: string;
-  age: number;
-  address: string;
+  employeeID: number;
+  employeeName: string;
+  employeeAge: number;
+  employeeAddress: string;
 }
