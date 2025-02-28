@@ -1,0 +1,1 @@
+{\n    "devDependencies": {\n        "jest": "^29.0.0",\n        "jsdom": "^21.1.0"\n    },\n    "scripts": {\n        "test": "jest"\n    }\n}\n

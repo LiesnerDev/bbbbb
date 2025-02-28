@@ -1,0 +1,55 @@
+<form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+  <app-custom-input
+    id="employeeID"
+    label="Employee ID"
+    placeholder="Enter 4-digit Employee ID"
+    [(ngModel)]="employeeRequest.employeeID"
+    name="employeeID"
+    required
+    pattern="^\\d{4}$"
+  ></app-custom-input>
+  <div *ngIf="employeeForm.submitted && employeeForm.controls.employeeID?.invalid" class="error">
+    Employee ID must be exactly 4 digits.
+  </div>
+
+  <app-custom-input
+    id="employeeName"
+    label="Employee Name"
+    placeholder="Enter employee name"
+    [(ngModel)]="employeeRequest.employeeName"
+    name="employeeName"
+    required
+    maxlength="20"
+  ></app-custom-input>
+  <div *ngIf="employeeForm.submitted && employeeForm.controls.employeeName?.invalid" class="error">
+    Employee Name must not exceed 20 characters.
+  </div>
+
+  <app-custom-input
+    id="employeeAge"
+    label="Employee Age"
+    placeholder="Enter 2-digit age"
+    [(ngModel)]="employeeRequest.employeeAge"
+    name="employeeAge"
+    required
+    pattern="^\\d{2}$"
+  ></app-custom-input>
+  <div *ngIf="employeeForm.submitted && employeeForm.controls.employeeAge?.invalid" class="error">
+    Employee Age must be exactly 2 digits.
+  </div>
+
+  <app-custom-input
+    id="employeeAddress"
+    label="Employee Address"
+    placeholder="Enter employee address"
+    [(ngModel)]="employeeRequest.employeeAddress"
+    name="employeeAddress"
+    required
+    maxlength="30"
+  ></app-custom-input>
+  <div *ngIf="employeeForm.submitted && employeeForm.controls.employeeAddress?.invalid" class="error">
+    Employee Address must not exceed 30 characters.
+  </div>
+
+  <app-custom-button label="Submit" [disabled]="employeeForm.invalid"></app-custom-button>
+</form>

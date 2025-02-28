@@ -1,0 +1,33 @@
+<div class="employee-insert-container">
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <app-custom-input id="id" label="Employee ID" placeholder="Enter 4-digit ID" formControlName="id"></app-custom-input>
+    <div *ngIf="employeeForm.get('id')?.invalid && employeeForm.get('id')?.touched" class="error">
+      ID must be a 4-digit number.
+    </div>
+
+    <app-custom-input id="name" label="Name" placeholder="Enter name" formControlName="name"></app-custom-input>
+    <div *ngIf="employeeForm.get('name')?.invalid && employeeForm.get('name')?.touched" class="error">
+      Name must be up to 20 alphabetic characters.
+    </div>
+
+    <app-custom-input id="age" label="Age" placeholder="Enter 2-digit age" formControlName="age"></app-custom-input>
+    <div *ngIf="employeeForm.get('age')?.invalid && employeeForm.get('age')?.touched" class="error">
+      Age must be a 2-digit number.
+    </div>
+
+    <app-custom-input id="address" label="Address" placeholder="Enter address" formControlName="address"></app-custom-input>
+    <div *ngIf="employeeForm.get('address')?.invalid && employeeForm.get('address')?.touched" class="error">
+      Address must be up to 30 alphabetic characters.
+    </div>
+
+    <app-custom-button label="Save" type="submit"></app-custom-button>
+  </form>
+
+  <div *ngIf="successMessage" class="success-message">
+    <app-custom-modal [message]="successMessage"></app-custom-modal>
+  </div>
+
+  <div *ngIf="errorMessage" class="error-message">
+    <app-custom-modal [message]="errorMessage"></app-custom-modal>
+  </div>
+</div>
